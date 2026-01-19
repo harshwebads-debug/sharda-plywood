@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharda Wood Products | Premium Plywood & Doors</title>
+    <title>Blog - Sharda Wood Products</title>
 
     <meta name="description" content="Manufacturer of premium Plywood, Block Boards, and Doors.">
     <!-- Bootstrap 5 CSS -->
@@ -21,7 +21,115 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="shortcut icon" href="assets/images/logo/sharda-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/fav.jpg" type="image/x-icon">
+
+    <style>
+        /* =========================================
+           BLOG HERO SECTION STYLES
+           ========================================= */
+        .swp-blog-hero-section {
+            position: relative;
+            height: 80vh;
+            /* Good height for Hero */
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--swp-black);
+            overflow: hidden;
+        }
+
+        /* Background Image */
+        .swp-blog-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            /* Taller for Parallax */
+            /* High Quality Wood/Interior Image */
+            background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        /* Overlay to make text readable */
+        .swp-blog-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* 60% Black Overlay */
+            z-index: 1;
+        }
+
+        .swp-blog-hero-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 4vw;
+        }
+
+        /* Label */
+        .swp-blog-hero-label {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            color: var(--swp-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--swp-gold);
+        }
+
+        /* Title */
+        .swp-blog-hero-title {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            color: var(--swp-white);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(30px);
+            font-weight: 500;
+        }
+
+        .swp-blog-hero-title strong {
+            color: var(--swp-gold);
+            font-weight: 700;
+        }
+
+        /* Description */
+        .swp-blog-hero-desc {
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .swp-blog-hero-title {
+                font-size: 3rem;
+            }
+
+            .swp-blog-hero-section {
+                height: 50vh;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -61,7 +169,7 @@
                 </a>
                 <div class="swp-desktop-links">
                     <a href="index.html" class="swp-nav-item active">Home</a>
-                    <a href="about.html" class="swp-nav-item">About Us</a>
+                    <a href="about-us.html" class="swp-nav-item">About Us</a>
                     <div class="swp-dropdown-wrapper">
                         <a href="products.html" class="swp-nav-item swp-dropdown-trigger">Products <i
                                 class="ri-arrow-down-s-line"></i></a>
@@ -73,10 +181,10 @@
                         </div>
                     </div>
                     <a href="blogs.html" class="swp-nav-item">Blogs</a>
-                    <a href="contact.html" class="swp-nav-item">Contact</a>
+                    <a href="contact-us.html" class="swp-nav-item">Contact</a>
                 </div>
                 <div class="swp-nav-actions">
-                    <a href="contact.html" class="swp-btn-quote">Get Quote</a>
+                    <a href="contact-us.html" class="swp-btn-quote">Get Quote</a>
                     <button class="swp-hamburger" id="swpMenuTrigger">
                         <span class="swp-line line-1"></span>
                         <span class="swp-line line-2"></span>
@@ -93,7 +201,7 @@
             <div class="swp-mobile-content">
                 <ul class="swp-mobile-nav-list">
                     <li><a href="index.html" class="main-link">Home</a></li>
-                    <li><a href="about.html" class="main-link">The Company</a></li>
+                    <li><a href="about-us.html" class="main-link">The Company</a></li>
                     <li>
                         <div class="swp-mobile-item-wrapper">
                             <a href="products.html" class="main-link">Our Products</a>
@@ -107,7 +215,7 @@
                         </ul>
                     </li>
                     <li><a href="infrastructure.html" class="main-link">Factory Tour</a></li>
-                    <li><a href="contact.html" class="main-link">Contact Us</a></li>
+                    <li><a href="contact-us.html" class="main-link">Contact Us</a></li>
                 </ul>
                 <div style="margin-top: 40px; color: #777;">
                     <p>+91-999******</p>
@@ -156,6 +264,215 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <!-- ==================== 
+         BLOG HERO SECTION
+    ==================== -->
+    <section class="swp-blog-hero-section">
+
+        <!-- Background Image -->
+        <div class="swp-blog-hero-bg"></div>
+        <div class="swp-blog-hero-overlay"></div>
+
+        <div class="swp-blog-hero-container">
+
+            <!-- Label -->
+            <span class="swp-blog-hero-label">The Journal</span>
+
+            <!-- Title -->
+            <h1 class="swp-blog-hero-title">
+                Crafting <strong>Stories</strong> <br> In Wood
+            </h1>
+
+            <!-- Description -->
+            <p class="swp-blog-hero-desc">
+                Dive into expert insights on interior design, material selection, and the latest trends shaping the
+                world of premium architecture.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- JS Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline();
+
+            // 1. BG Zoom Out (Subtle)
+            tl.fromTo(".swp-blog-hero-bg",
+                { scale: 1.1 },
+                { scale: 1, duration: 2, ease: "power2.out" }
+            )
+                // 2. Text Reveal
+                .to(".swp-blog-hero-label", { opacity: 1, y: 0, duration: 0.8 }, "-=1.5")
+                .to(".swp-blog-hero-title", { opacity: 1, y: 0, duration: 0.8 }, "-=1.3")
+                .to(".swp-blog-hero-desc", { opacity: 1, y: 0, duration: 0.8 }, "-=1.1");
+
+            // 3. Parallax Effect on Scroll
+            gsap.to(".swp-blog-hero-bg", {
+                scrollTrigger: {
+                    trigger: ".swp-blog-hero-section",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: 100, // Background moves slower than foreground
+                ease: "none"
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== 
+     11. BLOG SECTION (LATEST INSIGHTS)
+==================== -->
+    <section class="swp-blog-section" id="swpBlog">
+        <div class="swp-container">
+
+            <!-- Header -->
+            <div class="swp-blog-header">
+                <span class="swp-blog-sub">Knowledge Hub</span>
+                <h2 class="swp-blog-title">Latest From The Journal</h2>
+                <div class="swp-blog-line"></div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="row">
+
+                <!-- Blog 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="swp-blog-card">
+                        <div class="swp-blog-img-wrap">
+                            <img src="https://www.centuryply.com/assets/img/blog/21-06-21/B8-S-img1.jpg"
+                                alt="Plywood Selection" class="swp-blog-img">
+                            <div class="swp-shine"></div>
+                            <span class="swp-blog-tag">Guide</span>
+                        </div>
+                        <div class="swp-blog-content">
+                            <div class="swp-blog-meta">
+                                <i class="ri-calendar-line"></i> Oct 12, 2023
+                            </div>
+                            <h3 class="swp-blog-head">How to Choose the Right Plywood for Your Kitchen?</h3>
+                            <p class="swp-blog-desc">
+                                Understanding the difference between MR and BWP grades is crucial for wet areas like
+                                kitchens and bathrooms.
+                            </p>
+                            <a href="#" class="swp-blog-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="swp-blog-card">
+                        <div class="swp-blog-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=600&auto=format&fit=crop"
+                                alt="Interior Trends" class="swp-blog-img">
+                            <div class="swp-shine"></div>
+                            <span class="swp-blog-tag">Trends</span>
+                        </div>
+                        <div class="swp-blog-content">
+                            <div class="swp-blog-meta">
+                                <i class="ri-calendar-line"></i> Sep 28, 2023
+                            </div>
+                            <h3 class="swp-blog-head">Top 5 Wood Finishes Trending in Modern Interiors</h3>
+                            <p class="swp-blog-desc">
+                                From matte charcoal to warm walnut, explore the finishes that are defining luxury homes
+                                this year.
+                            </p>
+                            <a href="#" class="swp-blog-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="swp-blog-card">
+                        <div class="swp-blog-img-wrap">
+                            <img src="https://www.patidardoors.com/assets/images/new-images/blog/What-Is-Plywood.png"
+                                alt="Maintenance" class="swp-blog-img">
+                            <div class="swp-shine"></div>
+                            <span class="swp-blog-tag">Tips</span>
+                        </div>
+                        <div class="swp-blog-content">
+                            <div class="swp-blog-meta">
+                                <i class="ri-calendar-line"></i> Sep 15, 2023
+                            </div>
+                            <h3 class="swp-blog-head">Maintenance Tips to Increase Your Furniture's Life</h3>
+                            <p class="swp-blog-desc">
+                                Simple daily habits and cleaning techniques to keep your wooden furniture looking brand
+                                new for decades.
+                            </p>
+                            <a href="#" class="swp-blog-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- JS Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Header Animation
+            gsap.from(".swp-blog-header", {
+                scrollTrigger: {
+                    trigger: "#swpBlog",
+                    start: "top 80%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            // Cards Stagger (Enhanced Elastic)
+            gsap.from(".swp-blog-card", {
+                scrollTrigger: {
+                    trigger: ".swp-blog-section .row",
+                    start: "top 75%",
+                },
+                y: 80,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "back.out(1.2)", // Bouncy pop effect
+                clearProps: "all"
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
 
 
 
