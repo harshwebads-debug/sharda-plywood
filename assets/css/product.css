@@ -1,0 +1,929 @@
+ /* =========================================
+           1. GLOBAL RESET & ROOT VARIABLES
+           ========================================= */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     outline: none;
+     text-decoration: none !important;
+ }
+
+ :root {
+     --swp-gold: #C6A87C;
+     --swp-gold-dark: #A88B60;
+     --swp-black: #1A1A1A;
+     --swp-dark-grey: #2C2C2C;
+     --swp-white: #FFFFFF;
+     --font-heading: 'Oswald', sans-serif;
+     --font-body: 'Manrope', sans-serif;
+     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ html,
+ body {
+     width: 100%;
+     overflow-x: hidden;
+     font-family: var(--font-body);
+     background-color: var(--swp-white);
+     color: var(--swp-black);
+     scroll-behavior: smooth;
+ }
+
+ ul {
+     list-style: none;
+     padding-left: 0;
+     margin-bottom: 0;
+ }
+
+ a {
+     text-decoration: none;
+     color: inherit;
+ }
+
+
+
+ /* =========================================
+           PLYWOOD HERO SECTION STYLES
+           ========================================= */
+ .swp-ply-hero-section {
+     position: relative;
+     height: 80vh;
+     /* Immersive Height */
+     min-height: 600px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--swp-black);
+     overflow: hidden;
+ }
+
+ /* Parallax Background */
+ .swp-ply-hero-bg {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     /* Image of stacked plywood or texture */
+     background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1920&auto=format&fit=crop');
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     z-index: 0;
+ }
+
+ /* Dark Gradient Overlay */
+ .swp-ply-hero-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, #000000 90%);
+     z-index: 1;
+ }
+
+ .swp-ply-container {
+     position: relative;
+     z-index: 2;
+     width: 100%;
+     max-width: 1200px;
+     padding: 0 4vw;
+     text-align: center;
+ }
+
+ /* Titles */
+ .swp-ply-sub-title {
+     font-family: var(--font-heading);
+     color: var(--swp-gold);
+     font-size: 1.1rem;
+     letter-spacing: 4px;
+     text-transform: uppercase;
+     display: block;
+     margin-bottom: 10px;
+     opacity: 0;
+     transform: translateY(20px);
+ }
+
+ .swp-ply-main-title {
+     font-family: var(--font-heading);
+     font-size: 4rem;
+     line-height: 1.1;
+     color: var(--swp-white);
+     text-transform: uppercase;
+     margin-bottom: 30px;
+     opacity: 0;
+     transform: translateY(30px);
+ }
+
+ .swp-ply-main-title span {
+     color: transparent;
+     -webkit-text-stroke: 1px var(--swp-white);
+ }
+
+ /* Technical Badges Row */
+ .swp-ply-badges {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     margin-bottom: 40px;
+     opacity: 0;
+     transform: translateY(20px);
+     flex-wrap: wrap;
+ }
+
+ .swp-ply-badge {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     padding: 10px 20px;
+     border-radius: 50px;
+     background: rgba(255, 255, 255, 0.05);
+     backdrop-filter: blur(5px);
+     transition: 0.3s;
+ }
+
+ .swp-ply-badge:hover {
+     border-color: var(--swp-gold);
+     background: rgba(198, 168, 124, 0.1);
+ }
+
+ .swp-ply-badge i {
+     color: var(--swp-gold);
+     font-size: 1.2rem;
+ }
+
+ .swp-ply-badge span {
+     color: var(--swp-white);
+     font-family: var(--font-heading);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     font-size: 0.85rem;
+ }
+
+ /* Scroll Down */
+ .swp-ply-scroll {
+     position: absolute;
+     bottom: 40px;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
+     opacity: 0;
+ }
+
+ .swp-ply-mouse {
+     width: 24px;
+     height: 40px;
+     border: 2px solid rgba(255, 255, 255, 0.5);
+     border-radius: 20px;
+     position: relative;
+ }
+
+ .swp-ply-wheel {
+     width: 4px;
+     height: 6px;
+     background: var(--swp-gold);
+     border-radius: 2px;
+     position: absolute;
+     top: 8px;
+     left: 50%;
+     transform: translateX(-50%);
+     animation: plyScroll 2s infinite;
+ }
+
+ @keyframes plyScroll {
+     0% {
+         top: 8px;
+         opacity: 1;
+     }
+
+     100% {
+         top: 20px;
+         opacity: 0;
+     }
+ }
+
+ /* Responsive */
+ @media (max-width: 991px) {
+     .swp-ply-main-title {
+         font-size: 3rem;
+     }
+
+     .swp-ply-sub-title {
+         font-size: 0.9rem;
+         letter-spacing: 2px;
+     }
+
+     .swp-ply-badges {
+         gap: 15px;
+     }
+
+     .swp-ply-badge {
+         padding: 8px 15px;
+     }
+ }
+
+ @media (max-width: 576px) {
+     .swp-ply-main-title {
+         font-size: 2.5rem;
+         line-height: 1.2;
+     }
+
+     .swp-ply-badges {
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+     }
+
+     .swp-ply-badge {
+         width: 100%;
+         justify-content: center;
+         max-width: 280px;
+     }
+
+     .swp-ply-hero-section {
+         min-height: 500px;
+         height: 100vh;
+     }
+ }
+ 
+
+ /* =========================================
+       PROFESSIONAL DETAIL STYLES
+       ========================================= */
+ .swp-pro-detail-section {
+     padding: 120px 0;
+     background-color: #fff;
+     overflow: hidden;
+ }
+
+ .swp-containerrr {
+     width: 100%;
+     max-width: 1300px;
+     margin: 0 auto;
+     padding: 0 4vw;
+ }
+
+ /* --- Left Image Area --- */
+ .swp-pro-img-box {
+     position: relative;
+     padding-right: 20px;
+     /* Space for shadow/offset */
+ }
+
+ .swp-pro-img {
+     width: 100%;
+     height: 600px;
+     /* Tall & Elegant */
+     object-fit: cover;
+     border-radius: 2px;
+     box-shadow: 20px 20px 0px #F5F5F5;
+     /* Architectural Shadow */
+ }
+
+ /* Tech Spec Card Overlay */
+ .swp-tech-spec {
+     position: absolute;
+     bottom: 40px;
+     left: -20px;
+     background: var(--swp-black);
+     padding: 25px 30px;
+     min-width: 200px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+     z-index: 2;
+ }
+
+ .spec-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .spec-row:last-child {
+     border-bottom: none;
+     margin-bottom: 0;
+     padding-bottom: 0;
+ }
+
+ .spec-label {
+     color: #888;
+     font-size: 0.8rem;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .spec-value {
+     color: var(--swp-white);
+     font-family: var(--font-heading);
+     font-size: 1rem;
+ }
+
+ /* --- Right Content Area --- */
+ .swp-pro-content {
+     padding-left: 20px;
+     /* Gap logic handled by bootstrap grid gutter, adding extra safety */
+ }
+
+ .swp-title-group {
+     margin-bottom: 30px;
+ }
+
+ .swp-pro-tag {
+     font-family: var(--font-heading);
+     font-size: 0.85rem;
+     color: var(--swp-gold);
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     display: block;
+     margin-bottom: 15px;
+     font-weight: 600;
+ }
+
+ .swp-pro-title {
+     font-family: var(--font-heading);
+     font-size: 2.2rem;
+     /* Reduced Size */
+     color: var(--swp-black);
+     line-height: 1.2;
+     margin-bottom: 20px;
+     font-weight: 600;
+ }
+
+ /* Line Style Removed */
+
+ .swp-pro-desc {
+     font-size: 1.05rem;
+     color: #555;
+     line-height: 1.8;
+     /* Better readability */
+     margin-bottom: 40px;
+     text-align: justify;
+     /* Professional alignment */
+     max-width: 90%;
+ }
+
+ /* Professional Accordion */
+ .swp-pro-accordion {
+     border-top: 1px solid #E0E0E0;
+     margin-bottom: 40px;
+ }
+
+ .swp-p-acc-item {
+     border-bottom: 1px solid #E0E0E0;
+ }
+
+ .swp-p-acc-head {
+     padding: 20px 0;
+     cursor: pointer;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     transition: 0.3s;
+ }
+
+ .swp-p-acc-head h5 {
+     font-family: var(--font-heading);
+     font-size: 1.1rem;
+     color: var(--swp-black);
+     margin: 0;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+ }
+
+ .swp-acc-icon {
+     font-size: 1.2rem;
+     color: #888;
+     transition: transform 0.3s;
+ }
+
+ .swp-p-acc-body {
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.4s ease-out;
+ }
+
+ .swp-p-acc-body p {
+     font-size: 0.95rem;
+     color: #666;
+     line-height: 1.6;
+     margin-bottom: 20px;
+     padding-right: 20px;
+ }
+
+ /* Active Accordion State */
+ .swp-p-acc-item.active .swp-p-acc-head h5 {
+     color: var(--swp-gold);
+ }
+
+ .swp-p-acc-item.active .swp-acc-icon {
+     transform: rotate(45deg);
+     color: var(--swp-gold);
+ }
+
+ .swp-p-acc-item.active .swp-p-acc-body {
+     max-height: 150px;
+ }
+
+ /* Buttons */
+ .swp-action-group {
+     display: flex;
+     align-items: center;
+     gap: 30px;
+ }
+
+ .swp-btn-solid {
+     background-color: var(--swp-black);
+     color: #fff;
+     padding: 14px 35px;
+     font-family: var(--font-heading);
+     text-transform: uppercase;
+     font-size: 0.9rem;
+     letter-spacing: 1px;
+     text-decoration: none;
+     transition: 0.3s;
+     border: 1px solid var(--swp-black);
+ }
+
+ .swp-btn-solid:hover {
+     background-color: transparent;
+     color: var(--swp-black);
+     transform: translateY(-2px);
+ }
+
+ .swp-btn-link {
+     color: var(--swp-black);
+     font-family: var(--font-heading);
+     text-transform: uppercase;
+     font-size: 0.9rem;
+     letter-spacing: 1px;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     transition: 0.3s;
+     border-bottom: 1px solid transparent;
+ }
+
+ .swp-btn-link:hover {
+     color: var(--swp-gold);
+     gap: 12px;
+ }
+
+ /* Responsive */
+ @media (max-width: 991px) {
+     .swp-pro-title {
+         font-size: 2.2rem;
+     }
+
+     .swp-pro-img {
+         height: 400px;
+     }
+
+     .swp-tech-spec {
+         left: 0;
+         bottom: -30px;
+         width: 100%;
+         text-align: center;
+     }
+
+     .spec-row {
+         justify-content: center;
+         gap: 20px;
+     }
+
+     .col-lg-6.ps-lg-5 {
+         padding-left: 15px !important;
+         margin-top: 50px;
+     }
+ }
+
+
+
+ /* =========================================
+       COMBO SECTION STYLES
+       ========================================= */
+ .swp-combo-section {
+     padding: 100px 0;
+     /* Reduced padding */
+     position: relative;
+     /* Fixed Parallax Background */
+     background-image: url('https://www.plywoodproject.com/cdn/shop/articles/MG_0137_1500x.jpg?v=1709242823');
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     overflow: hidden;
+ }
+
+ /* Dark Overlay */
+ .swp-combo-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.75);
+     /* Darkens bg for contrast */
+     z-index: 0;
+ }
+
+ .swp-containerrr {
+     width: 100%;
+     max-width: 1200px;
+     /* Slightly contained for better focus */
+     margin: 0 auto;
+     padding: 0 4vw;
+     position: relative;
+     z-index: 2;
+     /* Content above overlay */
+ }
+
+ /* --- LEFT: SPECS PANEL (3D Effect) --- */
+ .swp-specs-panel {
+     background: rgba(255, 255, 255, 0.96);
+     /* Almost solid white */
+     padding: 50px 40px;
+     /* Adjusted padding */
+     height: 100%;
+     border-radius: 4px 0 0 4px;
+     /* 3D Box Shadow */
+     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+     backdrop-filter: blur(10px);
+     transition: transform 0.4s ease;
+ }
+
+ .swp-specs-panel:hover {
+     transform: translateY(-5px);
+     /* Lift Effect */
+     z-index: 3;
+     /* Pop above right panel if needed */
+ }
+
+ .swp-panel-head {
+     margin-bottom: 30px;
+ }
+
+ .swp-sec-title {
+     font-family: var(--font-heading);
+     font-size: 2rem;
+     /* Reduced Font Size */
+     color: var(--swp-black);
+     text-transform: uppercase;
+     margin-bottom: 10px;
+     line-height: 1.2;
+     font-weight: 600;
+ }
+
+ .swp-title-bar-left {
+     width: 50px;
+     height: 3px;
+     background-color: var(--swp-gold);
+ }
+
+ /* Condensed Table */
+ .swp-specs-table {
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ .swp-specs-table tr {
+     border-bottom: 1px solid #e0e0e0;
+ }
+
+ .swp-specs-table tr:last-child {
+     border-bottom: none;
+ }
+
+ .swp-spec-label {
+     padding: 12px 0;
+     /* Reduced padding */
+     font-family: var(--font-heading);
+     font-size: 0.9rem;
+     color: var(--swp-black);
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     width: 50%;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .swp-spec-label i {
+     color: var(--swp-gold);
+     font-size: 1.1rem;
+ }
+
+ .swp-spec-value {
+     padding: 12px 0;
+     /* Reduced padding */
+     font-family: var(--font-body);
+     font-size: 0.95rem;
+     color: #555;
+     font-weight: 600;
+     text-align: right;
+ }
+
+ /* --- RIGHT: WARRANTY PANEL (3D Effect) --- */
+ .swp-warranty-panel {
+     background-color: var(--swp-black);
+     padding: 50px 40px;
+     /* Adjusted padding */
+     height: 100%;
+     border-radius: 0 4px 4px 0;
+     position: relative;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     text-align: center;
+     color: #fff;
+     /* 3D Depth */
+     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+     border-left: 1px solid rgba(255, 255, 255, 0.1);
+     transition: transform 0.4s ease;
+ }
+
+ .swp-warranty-panel:hover {
+     transform: translateY(-5px);
+     /* Lift Effect */
+     z-index: 3;
+ }
+
+ .swp-war-bg-pattern {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: radial-gradient(rgba(198, 168, 124, 0.1) 1px, transparent 1px);
+     background-size: 20px 20px;
+     opacity: 0.3;
+     z-index: 0;
+ }
+
+ .swp-war-content {
+     position: relative;
+     z-index: 1;
+     width: 100%;
+ }
+
+ .swp-war-icon {
+     font-size: 3rem;
+     /* Adjusted Icon Size */
+     color: var(--swp-gold);
+     margin-bottom: 15px;
+     display: inline-block;
+     filter: drop-shadow(0 0 15px rgba(198, 168, 124, 0.4));
+     /* Glow */
+ }
+
+ .swp-war-title {
+     font-family: var(--font-heading);
+     font-size: 2rem;
+     /* Reduced Font Size */
+     color: #fff;
+     text-transform: uppercase;
+     margin-bottom: 15px;
+     font-weight: 600;
+ }
+
+ .swp-war-desc {
+     font-size: 0.95rem;
+     color: #aaa;
+     line-height: 1.6;
+     margin-bottom: 30px;
+ }
+
+ /* Badges */
+ .swp-war-badges {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 30px;
+     margin-bottom: 30px;
+ }
+
+ .swp-divider-vert {
+     width: 1px;
+     height: 40px;
+     background-color: rgba(255, 255, 255, 0.1);
+ }
+
+ .swp-w-badge {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .w-years {
+     font-family: var(--font-heading);
+     font-size: 2rem;
+     color: var(--swp-gold);
+     line-height: 1;
+     font-weight: 700;
+ }
+
+ .w-label {
+     font-size: 0.7rem;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     color: #fff;
+     margin-top: 5px;
+ }
+
+ /* Button */
+ .swp-war-btn {
+     display: inline-block;
+     padding: 12px 30px;
+     border: 1px solid var(--swp-gold);
+     color: var(--swp-gold);
+     font-family: var(--font-heading);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     text-decoration: none;
+     transition: 0.3s;
+     font-size: 0.85rem;
+ }
+
+ .swp-war-btn:hover {
+     background: var(--swp-gold);
+     color: var(--swp-black);
+     box-shadow: 0 0 20px rgba(198, 168, 124, 0.4);
+ }
+
+ /* Responsive */
+ @media (max-width: 991px) {
+
+     .swp-specs-panel,
+     .swp-warranty-panel {
+         border-radius: 4px;
+         margin-bottom: 20px;
+         padding: 40px 30px;
+     }
+
+     .swp-sec-title,
+     .swp-war-title {
+         font-size: 1.8rem;
+     }
+ }
+
+
+
+
+ /* =========================================
+       RELATED PRODUCTS STYLES
+       ========================================= */
+ .swp-related-section {
+     padding: 100px 0;
+     background-color: #f9f9f9;
+     /* Light Grey to separate from white section */
+ }
+
+ .swp-containerrr {
+     width: 100%;
+     max-width: 1300px;
+     margin: 0 auto;
+     padding: 0 4vw;
+ }
+
+ /* Header */
+ .swp-rel-header {
+     margin-bottom: 50px;
+ }
+
+ .swp-rel-sub {
+     font-family: var(--font-heading);
+     color: var(--swp-gold);
+     font-size: 0.9rem;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     display: block;
+     margin-bottom: 10px;
+ }
+
+ .swp-rel-title {
+     font-family: var(--font-heading);
+     font-size: 2.5rem;
+     color: var(--swp-black);
+     text-transform: uppercase;
+     margin-bottom: 15px;
+ }
+
+ .swp-rel-line {
+     width: 50px;
+     height: 3px;
+     background-color: var(--swp-black);
+     margin: 0 auto;
+ }
+
+ /* Card */
+ .swp-rel-card {
+     background-color: #fff;
+     border: 1px solid #eee;
+     transition: all 0.3s ease;
+     height: 100%;
+ }
+
+ .swp-rel-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+     border-color: var(--swp-gold);
+ }
+
+ /* Image Area */
+ .swp-rel-img-box {
+     position: relative;
+     height: 250px;
+     overflow: hidden;
+ }
+
+ .swp-rel-img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.5s ease;
+ }
+
+ .swp-rel-card:hover .swp-rel-img {
+     transform: scale(1.1);
+ }
+
+ /* Overlay Icon */
+ .swp-rel-overlay-link {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.3);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     opacity: 0;
+     transition: 0.3s;
+     color: #fff;
+     font-size: 2rem;
+     text-decoration: none;
+ }
+
+ .swp-rel-card:hover .swp-rel-overlay-link {
+     opacity: 1;
+ }
+
+ /* Content */
+ .swp-rel-content {
+     padding: 25px;
+     text-align: left;
+ }
+
+ .swp-rel-cat {
+     font-size: 0.8rem;
+     color: #888;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     display: block;
+     margin-bottom: 5px;
+ }
+
+ .swp-rel-name {
+     font-family: var(--font-heading);
+     font-size: 1.2rem;
+     color: var(--swp-black);
+     margin-bottom: 15px;
+     transition: 0.3s;
+ }
+
+ .swp-rel-card:hover .swp-rel-name {
+     color: var(--swp-gold-dark);
+ }
+
+ .swp-rel-btn {
+     font-family: var(--font-heading);
+     font-size: 0.9rem;
+     color: var(--swp-black);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     text-decoration: none;
+     font-weight: 600;
+     border-bottom: 1px solid transparent;
+     transition: 0.3s;
+ }
+
+ .swp-rel-btn:hover {
+     color: var(--swp-gold);
+     border-bottom-color: var(--swp-gold);
+ }
+
+ /* Responsive */
+ @media (max-width: 991px) {
+     .swp-rel-title {
+         font-size: 2rem;
+     }
+ }

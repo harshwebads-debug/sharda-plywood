@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharda Wood Products | Premium Flush Doors</title>
+
+    <meta name="description" content="Manufacturer of premium Plywood, Block Boards, and Doors.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/product.css">
+    <link rel="shortcut icon" href="assets/images/logo/sharda-logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- 1. TOP BAR -->
+    <div class="swp-top-bar">
+        <div class="swp-container">
+            <div class="swp-top-inner">
+                <div class="swp-top-left">
+                    <a href="tel:+91999******" class="swp-top-link">
+                        <i class="ri-phone-fill"></i> <span>+91-999******</span>
+                    </a>
+                    <span class="swp-divider">|</span>
+                    <a href="mailto:info@shardawood.com" class="swp-top-link">
+                        <i class="ri-mail-fill"></i> <span>info@shardawood.com</span>
+                    </a>
+                </div>
+                <div class="swp-top-right">
+                    <span class="swp-work-hours">Mon - Sat: 9:00 AM - 8:00 PM</span>
+                    <div class="swp-social-box">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <nav class="swp-navbar" id="swpNavbar">
+        <div class="swp-container">
+            <div class="swp-nav-wrapper">
+                <a href="index.html" class="swp-brand">
+                    <img src="assets/images/logo/sharda-logo.png" alt="Sharda Wood Products" class="swp-logo-img"
+                        onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+                </a>
+                <div class="swp-desktop-links">
+                    <a href="index.html" class="swp-nav-item active">Home</a>
+                    <a href="about-us.html" class="swp-nav-item">About Us</a>
+                    <div class="swp-dropdown-wrapper">
+                        <a href="products.html" class="swp-nav-item swp-dropdown-trigger">Products <i
+                                class="ri-arrow-down-s-line"></i></a>
+                        <div class="swp-dropdown-menu">
+                            <a href="plywood.html">Plywood Range</a>
+                            <a href="block-boards.html">Block Boards</a>
+                            <a href="flush-doors.html">Flush Doors</a>
+                        </div>
+                    </div>
+                    <a href="blogs.html" class="swp-nav-item">Blogs</a>
+                    <a href="contact-us.html" class="swp-nav-item">Contact</a>
+                </div>
+                <div class="swp-nav-actions">
+                    <a href="contact-us.html" class="swp-btn-quote">Get Quote</a>
+                    <button class="swp-hamburger" id="swpMenuTrigger">
+                        <span class="swp-line line-1"></span>
+                        <span class="swp-line line-2"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. OVERLAY MENU -->
+    <div class="swp-overlay-menu" id="swpOverlay">
+        <button class="swp-overlay-close" id="swpOverlayClose"><i class="ri-close-line"></i></button>
+        <div class="swp-overlay-content">
+            <div class="swp-mobile-content">
+                <ul class="swp-mobile-nav-list">
+                    <li><a href="index.html" class="main-link">Home</a></li>
+                    <li><a href="about.html" class="main-link">The Company</a></li>
+                    <li>
+                        <div class="swp-mobile-item-wrapper">
+                            <a href="products.html" class="main-link">Our Products</a>
+                            <i class="ri-add-line swp-mobile-accordion-btn" id="swpMobileProdToggle"></i>
+                        </div>
+                        <ul class="swp-mobile-sub-menu" id="swpMobileProdMenu">
+                            <li><a href="#">Plywood Range</a></li>
+                            <li><a href="#">Block Boards</a></li>
+                            <li><a href="#">Flush Doors</a></li>
+                            <li><a href="#">Decorative Veneers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="infrastructure.html" class="main-link">Factory Tour</a></li>
+                    <li><a href="contact.html" class="main-link">Contact Us</a></li>
+                </ul>
+                <div style="margin-top: 40px; color: #777;">
+                    <p>+91-999******</p>
+                    <p>info@shardawood.com</p>
+                </div>
+            </div>
+            <div class="swp-desktop-content">
+                <div class="swp-desktop-grid">
+                    <div class="swp-map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.66635249415!2d77.19946279624738!3d30.132204900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ef99b8b19326b%3A0x6e35560943967d7b!2sYamuna%20Nagar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="swp-desktop-contact">
+                        <h3>Locate Us</h3>
+                        <p class="tagline">Visit our manufacturing unit to witness quality in the making.</p>
+                        <div class="swp-contact-row">
+                            <div class="swp-contact-icon"><i class="ri-map-pin-2-line"></i></div>
+                            <div class="swp-contact-text">
+                                <h5>Factory Address</h5>
+                                <p>Industrial Area, Phase-II,<br>Yamunanagar, Haryana 135001, India</p>
+                            </div>
+                        </div>
+                        <div class="swp-contact-row">
+                            <div class="swp-contact-icon"><i class="ri-phone-line"></i></div>
+                            <div class="swp-contact-text">
+                                <h5>Call Us</h5>
+                                <p>+91 99926 88000<br>+91 1732 255555</p>
+                            </div>
+                        </div>
+                        <div class="swp-contact-row">
+                            <div class="swp-contact-icon"><i class="ri-mail-send-line"></i></div>
+                            <div class="swp-contact-text">
+                                <h5>Email Us</h5>
+                                <p>info@shardawood.com<br>sales@shardawood.com</p>
+                            </div>
+                        </div>
+                        <div class="swp-social-icons-lg">
+                            <a href="#"><i class="ri-facebook-fill"></i></a>
+                            <a href="#"><i class="ri-instagram-line"></i></a>
+                            <a href="#"><i class="ri-whatsapp-line"></i></a>
+                            <a href="#"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== 
+     FLUSH DOORS PRODUCT HERO
+==================== -->
+    <section class="swp-ply-hero-section">
+
+        <!-- Background -->
+        <div class="swp-ply-hero-bg"></div>
+        <div class="swp-ply-hero-overlay"></div>
+
+        <div class="swp-ply-container">
+
+            <!-- Content -->
+            <span class="swp-ply-sub-title">Engineered for Security & Elegance</span>
+            <h1 class="swp-ply-main-title">
+                Premium <span>Flush Doors</span> <br> For Modern Interiors
+            </h1>
+
+            <!-- Technical Highlights -->
+            <div class="swp-ply-badges">
+                <div class="swp-ply-badge">
+                    <i class="ri-shield-check-line"></i>
+                    <span>Solid Core Construction</span>
+                </div>
+                <div class="swp-ply-badge">
+                    <i class="ri-medal-line"></i>
+                    <span>ISI Certified (IS:2202)</span>
+                </div>
+                <div class="swp-ply-badge">
+                    <i class="ri-leaf-line"></i>
+                    <span>Termite & Borer Resistant</span>
+                </div>
+                <div class="swp-ply-badge">
+                    <i class="ri-drop-line"></i>
+                    <span>Moisture Resistant (BWP Optional)</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="swp-ply-scroll">
+            <div class="swp-ply-mouse">
+                <div class="swp-ply-wheel"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- JS Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline();
+
+            // 1. Initial Zoom
+            tl.fromTo(".swp-ply-hero-bg",
+                { scale: 1.2 },
+                { scale: 1, duration: 2, ease: "power2.out" }
+            )
+                // 2. Elements Reveal
+                .to(".swp-ply-sub-title", { opacity: 1, y: 0, duration: 0.8 }, "-=1.5")
+                .to(".swp-ply-main-title", { opacity: 1, y: 0, duration: 0.8 }, "-=1.3")
+                .to(".swp-ply-badges", { opacity: 1, y: 0, duration: 0.8 }, "-=1.1")
+                .to(".swp-ply-scroll", { opacity: 1, duration: 1 }, "-=0.5");
+
+            // 3. Parallax Scroll
+            gsap.to(".swp-ply-hero-bg", {
+                scrollTrigger: {
+                    trigger: ".swp-ply-hero-section",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: 150,
+                ease: "none"
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== 
+     SECTION: PRODUCT DETAIL (PROFESSIONAL CLEAN)
+==================== -->
+    <section class="swp-pro-detail-section" id="productDetail">
+        <div class="swp-containerrr">
+            <div class="row align-items-center">
+
+                <!-- Left: Product Visual (Clean & Sharp) -->
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="swp-pro-img-box">
+                        <img src="https://www.svwoods.com/wp-content/uploads/2021/03/Exclusive_Flush_Doors.jpg"
+                            class="swp-pro-img" alt="Flush Doors">
+
+                        <!-- Tech Spec Card (Minimal) -->
+                        <div class="swp-tech-spec">
+                            <div class="spec-row">
+                                <span class="spec-label">Standard</span>
+                                <span class="spec-value">IS:2202</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Core</span>
+                                <span class="spec-value">Solid Wood / Hardwood</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content (Structured & Spaced) -->
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="swp-pro-content">
+
+                        <div class="swp-title-group">
+                            <span class="swp-pro-tag">Interior & Architectural</span>
+                            <h2 class="swp-pro-title">Premium <span style="color:#C6A87C;">Flush Doors</span></h2>
+                        </div>
+
+                        <p class="swp-pro-desc">
+                            Our Flush Doors are engineered with a solid core and premium face veneers, delivering
+                            structural
+                            rigidity, smooth finish, and long-term durability. Designed for modern architectural and
+                            interior applications, they offer superior performance, dimensional stability, and reliable
+                            resistance against termites, borers, and moisture.
+                        </p>
+
+                        <!-- Professional Accordion -->
+                        <div class="swp-pro-accordion">
+
+                            <!-- Item 1 -->
+                            <div class="swp-p-acc-item active">
+                                <div class="swp-p-acc-head">
+                                    <h5>Solid Core Strength</h5>
+                                    <span class="swp-acc-icon"><i class="ri-add-line"></i></span>
+                                </div>
+                                <div class="swp-p-acc-body">
+                                    <p>Built using high-density solid blocks for enhanced mechanical strength and
+                                        superior
+                                        load-bearing performance.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="swp-p-acc-item">
+                                <div class="swp-p-acc-head">
+                                    <h5>Termite & Borer Protection</h5>
+                                    <span class="swp-acc-icon"><i class="ri-add-line"></i></span>
+                                </div>
+                                <div class="swp-p-acc-body">
+                                    <p>Treated with anti-borer and anti-termite preservatives to ensure long-lasting
+                                        durability in residential and commercial environments.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="swp-p-acc-item">
+                                <div class="swp-p-acc-head">
+                                    <h5>Moisture & Warp Resistance</h5>
+                                    <span class="swp-acc-icon"><i class="ri-add-line"></i></span>
+                                </div>
+                                <div class="swp-p-acc-body">
+                                    <p>Available in MR, BWR, and BWP variants to withstand humidity and prevent warping
+                                        under varying climatic conditions.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="swp-action-group">
+                            <a href="contact.html" class="swp-btn-solid">Get Quote</a>
+                            <a href="specs.pdf" class="swp-btn-link">Download Specs <i class="ri-download-line"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- JS Logic (Add to script.js) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Image Fade In
+            gsap.from(".swp-pro-img-box", {
+                scrollTrigger: { trigger: ".swp-pro-detail-section", start: "top 80%" },
+                opacity: 0, x: -30, duration: 1, ease: "power2.out"
+            });
+
+            // Content Fade In
+            gsap.from(".swp-pro-content > *", {
+                scrollTrigger: { trigger: ".swp-pro-detail-section", start: "top 80%" },
+                opacity: 0, y: 30, duration: 0.8, stagger: 0.1, ease: "power2.out", delay: 0.3
+            });
+
+            // Accordion Logic
+            const accItems = document.querySelectorAll('.swp-p-acc-item');
+            accItems.forEach(item => {
+                const head = item.querySelector('.swp-p-acc-head');
+                head.addEventListener('click', () => {
+                    // Close others
+                    accItems.forEach(other => {
+                        if (other !== item) other.classList.remove('active');
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+    <!-- ==================== 
+     SECTION: SPECS & WARRANTY COMBO (3D PARALLAX) — FLUSH DOORS
+==================== -->
+    <section class="swp-combo-section" id="specsAndWarranty">
+        <div class="swp-combo-overlay"></div>
+
+        <div class="swp-containerrr">
+            <div class="row g-0">
+
+                <!-- LEFT: Technical Specifications -->
+                <div class="col-lg-6">
+                    <div class="swp-specs-panel" data-aos="fade-right">
+                        <div class="swp-panel-head">
+                            <h2 class="swp-sec-title text-dark">Technical Specifications</h2>
+                            <div class="swp-title-bar-left"></div>
+                        </div>
+
+                        <table class="swp-specs-table">
+                            <tbody>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-ruler-2-line"></i> Thickness</td>
+                                    <td class="swp-spec-value">25mm — 35mm</td>
+                                </tr>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-layout-masonry-line"></i> Sizes</td>
+                                    <td class="swp-spec-value">Standard Door Sizes (Custom Available)</td>
+                                </tr>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-git-commit-line"></i> Core Structure</td>
+                                    <td class="swp-spec-value">Solid Wood / Hardwood Blocks</td>
+                                </tr>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-git-branch-line"></i> Face Veneer</td>
+                                    <td class="swp-spec-value">Premium Veneer / Laminate Ready</td>
+                                </tr>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-water-flash-line"></i> Bonding Grade</td>
+                                    <td class="swp-spec-value">MR / BWR / BWP (IS:2202)</td>
+                                </tr>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-contrast-drop-line"></i> Moisture Content
+                                    </td>
+                                    <td class="swp-spec-value">8% — 12%</td>
+                                </tr>
+                                <tr>
+                                    <td class="swp-spec-label"><i class="ri-weight-line"></i> Density</td>
+                                    <td class="swp-spec-value">~0.70 — 0.80 g/cc</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Warranty Assurance -->
+                <div class="col-lg-6">
+                    <div class="swp-warranty-panel" data-aos="fade-left">
+                        <div class="swp-war-bg-pattern"></div>
+
+                        <div class="swp-war-content">
+                            <div class="swp-war-icon">
+                                <i class="ri-shield-star-fill"></i>
+                            </div>
+
+                            <h2 class="swp-war-title">Quality Guaranteed</h2>
+                            <p class="swp-war-desc">
+                                Flush Doors are crafted for solid strength, uniform stability and long-lasting
+                                performance,
+                                making them ideal for premium interior applications and architectural installations.
+                            </p>
+
+                            <div class="swp-war-badges">
+                                <div class="swp-w-badge">
+                                    <span class="w-years">7</span>
+                                    <span class="w-label">Years Warranty</span>
+                                </div>
+                                <div class="swp-divider-vert"></div>
+                                <div class="swp-w-badge">
+                                    <span class="w-years">100%</span>
+                                    <span class="w-label">Termite & Borer Protection</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="swp-war-btn">Download Warranty Card</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- JS Logic (Add to script.js) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Combined Panel Entry
+            gsap.from(".swp-combo-section .col-lg-6", {
+                scrollTrigger: { trigger: ".swp-combo-section", start: "top 80%" },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== 
+     SECTION: RELATED PRODUCTS
+==================== -->
+    <section class="swp-related-section" id="relatedProducts">
+        <div class="swp-containerrr">
+
+            <!-- Header -->
+            <div class="swp-rel-header text-center">
+                <span class="swp-rel-sub">Explore More</span>
+                <h2 class="swp-rel-title">Related Products</h2>
+                <div class="swp-rel-line"></div>
+            </div>
+
+            <div class="row">
+
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="swp-rel-card">
+                        <div class="swp-rel-img-box">
+                            <img src="https://www.durbi.in/img/block-board.jpg" alt="BWP Block Board"
+                                class="swp-rel-img">
+                            <a href="#" class="swp-rel-overlay-link"><i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                        <div class="swp-rel-content">
+                            <span class="swp-rel-cat">Block Boards</span>
+                            <h3 class="swp-rel-name">BWP Grade Block Board</h3>
+                            <a href="#" class="swp-rel-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="swp-rel-card">
+                        <div class="swp-rel-img-box">
+                            <img src="https://images.unsplash.com/photo-1549298240-0d8e60513026?q=80&w=600&auto=format&fit=crop"
+                                alt="Marine Plywood" class="swp-rel-img">
+                            <a href="#" class="swp-rel-overlay-link"><i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                        <div class="swp-rel-content">
+                            <span class="swp-rel-cat">Marine Plywood</span>
+                            <h3 class="swp-rel-name">710 Grade BWP Plywood</h3>
+                            <a href="#" class="swp-rel-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="swp-rel-card">
+                        <div class="swp-rel-img-box">
+                            <img src="https://canplyplywood.com/wp-content/uploads/2024/07/Flush-Doors-1024x759.webp"
+                                alt="Flush Door" class="swp-rel-img">
+                            <a href="#" class="swp-rel-overlay-link"><i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                        <div class="swp-rel-content">
+                            <span class="swp-rel-cat">Doors</span>
+                            <h3 class="swp-rel-name">Flush Door</h3>
+                            <a href="#" class="swp-rel-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== 
+     12. FOOTER SECTION (ULTRA PREMIUM)
+==================== -->
+    <footer class="swp-ultra-footer" id="swpFooter">
+
+        <!-- Big Background Brand Name -->
+        <div class="swp-big-brand">SHARDA WOOD</div>
+
+        <div class="swp-containerr">
+
+            <!-- Top Row: CTA & Navigation -->
+            <div class="row swp-footer-top">
+
+                <!-- Left: Call to Action -->
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="swp-label">Ready to upgrade?</span>
+                    <h2 class="swp-footer-heading">Let's craft excellence<br> together.</h2>
+                    <a href="contact.html" class="swp-gold-btn">
+                        Get A Quote <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <!-- Right: Navigation Grid -->
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="swp-list-head">Collections</h5>
+                            <ul class="swp-footer-links">
+                                <li><a href="#">Premium Plywood</a></li>
+                                <li><a href="#">Block Boards</a></li>
+                                <li><a href="#">Flush Doors</a></li>
+                                <li><a href="#">Architectural Veneers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="swp-list-head">Company</h5>
+                            <ul class="swp-footer-links">
+                                <li><a href="about.html">Our Legacy</a></li>
+                                <li><a href="infrastructure.html">The Factory</a></li>
+                                <li><a href="gallery.html">Projects</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle: The Floating Contact Card -->
+            <div class="swp-contact-card">
+                <div class="row align-items-center">
+
+                    <!-- Factory Address -->
+                    <div class="col-md-4 mb-4 mb-md-0 border-right-gold">
+                        <div class="swp-loc-box">
+                            <i class="ri-factory-line"></i>
+                            <div>
+                                <h6>Manufacturing Unit</h6>
+                                <p>Industrial Area, Phase-II,<br>Yamunanagar, Haryana 135001</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-md-4 mb-4 mb-md-0 border-right-gold">
+                        <div class="swp-loc-box">
+                            <i class="ri-customer-service-2-line"></i>
+                            <div>
+                                <h6>Talk to Experts</h6>
+                                <p>
+                                    <a href="tel:+91999******">+91 99926 88000</a><br>
+                                    <a href="mailto:info@shardawood.com">info@shardawood.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications & Social -->
+                    <div class="col-md-4 text-md-end">
+                        <div class="swp-cert-badges">
+                            <span class="badge-gold">ISI Certified</span>
+                            <span class="badge-gold">ISO 9001</span>
+                        </div>
+                        <div class="swp-social-icons">
+                            <a href="#"><i class="ri-instagram-line"></i></a>
+                            <a href="#"><i class="ri-facebook-fill"></i></a>
+                            <a href="#"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom: Copyright -->
+            <div class="swp-footer-bottom">
+                <p>© 2024 Sharda Wood Products. Crafted for Strength.</p>
+                <div class="swp-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Navbar & Menu Logic (Existing) ---
+            const navbar = document.getElementById('swpNavbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+
+            const menuTrigger = document.getElementById('swpMenuTrigger');
+            const overlay = document.getElementById('swpOverlay');
+            const closeBtn = document.getElementById('swpOverlayClose');
+            const mobileLinks = document.querySelectorAll('.swp-mobile-nav-list a.main-link');
+
+            menuTrigger.addEventListener('click', () => {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            const closeMenu = () => {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+            closeBtn.addEventListener('click', closeMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+            const prodToggle = document.getElementById('swpMobileProdToggle');
+            const prodMenu = document.getElementById('swpMobileProdMenu');
+            if (prodToggle && prodMenu) {
+                prodToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    prodToggle.classList.toggle('active');
+                    prodMenu.classList.toggle('open');
+                });
+            }
+
+        });
+    </script>
+</body>
+
+</html>
